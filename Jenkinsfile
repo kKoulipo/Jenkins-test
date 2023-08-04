@@ -1,20 +1,23 @@
 node {
-    def app
+    stage("agent"){
+        agent {
+            dockerfile true
+        }
+        sh 'pwd'
+    }
     stage("clone"){
         checkout scm
     }
-    
     stage("build"){
-        app =docker.build('run/alpine')
+        docker.build('my_nginx')
     }
-    stage('run'){
-        docker.image('run/alpine').withRun(){ c ->
-            sh 'docker ps'
-	    sh 'pwd'
-        }
-
+    stage("run"){
+        docker.image('my_nginx').withRun(){
+        
     }
-stage("pwd"){
-sh 'pwd'
-}
+    stage('images list'){
+        sh 'docker images'
+    }
+    
+ }
 }
