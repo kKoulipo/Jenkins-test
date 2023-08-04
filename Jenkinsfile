@@ -1,13 +1,13 @@
-pipeline{
-    agent{
-        dockerfile true
+node {
+    stage('clone'){
+        checkout scm
     }
     
-    stages{
-        stage("pwd"){
-            steps{
-                sh 'pwd'
-            }
+    stage("run et push"){
+        def Image= docker.image("my_nginx")
+        Image.withRun(){
+            
         }
+        Image.push()
     }
 }

@@ -1,2 +1,2 @@
-FROM nginx:latest
-WORKDIR /var/www/html
+FROM alpine
+WORKDIR /data
