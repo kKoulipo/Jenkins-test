@@ -10,7 +10,11 @@ node {
     stage('run'){
         docker.image('run/alpine').withRun(){ c ->
             sh 'docker ps'
-	    sh 'docker images'
+	    sh 'pwd'
         }
+
     }
+stage("pwd){
+sh 'pwd'
+}
 }
