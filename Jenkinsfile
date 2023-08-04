@@ -8,6 +8,9 @@ node {
         Image.withRun(){
             
         }
+        Image.inside(){
+            sh 'pwd'
+        }
         Image.push()
     }
 }
