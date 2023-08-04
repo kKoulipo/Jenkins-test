@@ -11,6 +11,6 @@ node {
         Image.inside(){
             sh 'pwd'
         }
-        Image.push()
+       
     }
 }
