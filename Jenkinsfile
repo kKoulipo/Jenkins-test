@@ -14,7 +14,7 @@ node {
         }
 
     }
-stage("pwd){
+stage("pwd"){
 sh 'pwd'
 }
 }
